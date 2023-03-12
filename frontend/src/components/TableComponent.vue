@@ -6,14 +6,15 @@
 
           <div v-if="!task.editable">{{ task.task }}</div>
           <div v-else>
-            <input type="text" v-model="task.task_edit">
-            <button v-on:click="update_task(task)">Save</button>
+            <input id="edit_task_field" type="text" v-model="task.task_edit">
+            <button id="update_task_btn" v-on:click="update_task(task)"> Save </button>
           </div>
 
           <div style="float: right;">
             <button v-on:click="edit_task(task)"> ✎ </button>
             <button id="delete_task_btn" v-on:click="delete_task(task.id, task.task)"> 🗸 </button>
           </div>
+
         </th>
       </tr>
     </table>
@@ -85,7 +86,7 @@
     width: 100%;
   }
   td, th {
-    border: 1px solid #eaeaea;
+    /* border: 1px solid #eaeaea; */
     text-align: left;
     padding: 10px 0px 0px 10px;
     border-radius: 10px;
@@ -104,5 +105,19 @@
     border: 0px;
     border-radius: 5px;
     padding: 5px;
+  }
+  #edit_task_field {
+    width: 30vw;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 2px 2px 5px 0px grey;
+  }
+  #update_task_btn {
+    margin-left: 5px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0px grey;
   }
 </style>
