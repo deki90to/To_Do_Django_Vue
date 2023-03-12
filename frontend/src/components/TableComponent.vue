@@ -3,7 +3,6 @@
     <table>
       <tr>
         <th>
-          <!-- {{ task.task }} -->
 
           <div v-if="!task.editable">{{ task.task }}</div>
           <div v-else>
@@ -13,7 +12,7 @@
 
           <div style="float: right;">
             <button v-on:click="edit_task(task)"> ✎ </button>
-            <button v-on:click="delete_task(task.id, task.task)"> 🗸 </button>
+            <button id="delete_task_btn" v-on:click="delete_task(task.id, task.task)"> 🗸 </button>
           </div>
         </th>
       </tr>
@@ -83,15 +82,27 @@
 <style>
   table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
     width: 100%;
   }
   td, th {
     border: 1px solid #eaeaea;
     text-align: left;
-    padding: 10px;
+    padding: 10px 0px 0px 10px;
+    border-radius: 10px;
+    border: 0px;
+    /* box-shadow: 1px 1px 5px 0px lightgoldenrodyellow; */
+    background-color: lightcyan;
   }
   tr:nth-child(even) {
     background-color: #eaeaea;
+  }
+  #delete_task_btn {
+    width: 30vw;
+    margin-left: 5px;
+    background-color: grey;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
   }
 </style>

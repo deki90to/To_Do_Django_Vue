@@ -1,8 +1,7 @@
 <template>
-  <h3> Add new task </h3>
   <form @submit.prevent="task_create()">
-    <input type="text" name="task" placeholder="Type new task here..." v-model="data.task"> 
-    <button> Save </button> <br><br>
+    <input type="text" id="new_task_field" name="task" placeholder="Type new task here..." v-model="data.task"> 
+    <button id="new_task_save_btn"> Save </button> <br><br>
   </form>
 </template>
 
@@ -34,3 +33,20 @@
     }
   }
 </script>
+
+<style>
+  #new_task_field {
+    padding: 10px;
+    border: 0px solid grey;
+    border-radius: 10px;
+    width: 50vw;
+    box-shadow: 2px 2px 5px 0px grey;
+  }
+  #new_task_save_btn {
+    margin-left: 10px;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0px grey;
+  }
+</style>
