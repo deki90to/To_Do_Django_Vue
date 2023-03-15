@@ -4,7 +4,9 @@
       <tr>
         <th>
 
-          <div v-if="!task.editable">{{ task.task }}</div>
+          <div v-if="!task.editable">
+            {{ task.task }}
+           </div>
           <div v-else>
             <input id="edit_task_field" type="text" v-model="task.task_edit">
             <button id="update_task_btn" v-on:click="update_task(task)"> Save </button>
